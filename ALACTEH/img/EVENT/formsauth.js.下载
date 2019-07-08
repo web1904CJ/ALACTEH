@@ -1,0 +1,178 @@
+/*************************************************************************************
+程式功能		:	表單驗證
+建置日期		:	2011-06-02
+版本			:	1.0
+版權所有		:	尚峪資訊科技有限公司 http://www.shang-yu.com.tw
+--------------------------------------------------------------------------------------
+fromsAuth
+表單元件驗證參數(fun)
+checkNull			:	驗證空白
+checkNum			:	驗證數字
+checkNumNull		:	驗證數字必填
+checkEnNum			:	驗證英文數字
+checkEnNumNull		:	驗證英文數字必填
+checkPersonID		:	驗證身份證字號
+checkPersonIDNull	:	驗證身份證字號必填
+checkEmail			:	驗證電子信箱
+checkEmailNull		:	驗證電子信箱必填
+checkItems			:	驗證核選方塊及選項方塊
+checkSame			:	驗證和checkSame欄位的值是否相同
+checkSameNull		:	驗證和checkSame欄位的值是否相同必填
+checkExt			:	驗證上傳格式(屬性ext="jpg,xls....")
+
+col_check
+表單欄位驗證
+*************************************************************************************/
+(function ($){
+	jQuery.fn.extend ({	
+		fromsAuth: function(option){
+			return this.each(function(){			
+				var settings = { 
+								type:		 "AJAX",		//AJAX,NONE
+								checkbox:	 false,			//checkbox全值傳送
+								callprev:	function(){}	//送出前先執行
+							   };
+				$.extend(settings, option);
+						
+				var $form = $(this);
+				var _this  = this;
+				
+				this._thisInfo = function($this, $form){
+					var ret 		= check_tools[$this.attr('fun')]($this, $form);
+					var id  		= $form.find("#" + $this.attr("id")).attr("id");
+					var name  		= $form.find("#" + $this.attr("id")).attr("name");
+					var nullstr		= $form.find("#" + $this.attr("id")).attr("nullstr");
+					var errorstr	= $form.find("#" + $this.attr("id")).attr("errorstr");
+
+					switch(ret){
+						case "PASS": 
+							$form.find(".forms_show[for='" + name + "']").text('&nbsp;').css("visibility", "hidden").attr('error', 'false');
+							break;
+						case "ERROR":
+							if(errorstr)$form.find(".forms_show[for='" + name + "']").text(errorstr).fadeIn().css("visibility", "visible").attr('error', 'true');
+							break;
+						case "NULL":
+							if(nullstr)$form.find(".forms_show[for='" + name + "']").text(nullstr).fadeIn().css("visibility", "visible").attr('error', 'true');
+							break;
+					};
+				};
+				
+				this._serializeJSON = function($form){
+					
+					if(settings.checkbox == true){
+						var datas = $("#"+ $form.attr('id') + " :input[type!=checkbox]").serializeArray();//將表單裡取出
+			
+						datas = datas.concat(
+							$("#" + $form.attr('id') + " :input[type=checkbox]").map(
+								function(){
+									var val = '';
+									(this.checked == true)? val = this.value: val = '';
+									return {"name": this.name, "value": val}
+								}).get()					 
+						);
+					}
+					else{
+						var datas = $form.serializeArray();
+					};				
+					
+					return JSON.stringify(datas);
+				};
+				
+				this._ajax = function($form, datastr, callback){
+					$.ajax({
+						type: "POST",
+						cache: false,
+						async: true,
+						url: $form.attr('action'),
+						data: datastr,
+						dataType: 'json',
+						error: function(){
+							alert('ajax error....');
+						},
+						success: function(ret){
+							if($.isFunction(callback))callback(ret);
+						}
+					});
+				};
+				
+				
+				
+				//綁定事件-focus, blur
+				$form.find("[fun]").each(function(){	
+					var id  	= $form.find("#" + $(this).attr("id")).attr("id");
+					var leftw	= parseInt($form.find(".forms_help[for='" + id + "']").attr('leftw'));
+					
+					$(this).focus(function(){
+						if(leftw){
+							$form.find(".forms_help[for='" + id + "']").css({
+								left :	$(this).offset().left + leftw,
+								top :	$(this).offset().top
+							}).show();
+						};
+					}).blur(function(){
+						$form.find(".forms_help[for='" + id + "']").fadeOut();
+					});							   
+				});				
+				
+				//綁定事件-change, blur
+				$form.find("[fun]").each(function(){	
+					$(this).change(function(){
+						_this._thisInfo($(this), $form);						
+					}).blur(function(){
+						_this._thisInfo($(this), $form);						
+					});							   
+				});
+				
+				//綁定事件-送出表單
+				$form.submit(function(){
+					//送出去執行
+					if($.isFunction(settings.callprev)){
+						var getmsg = settings.callprev();
+						if(getmsg){
+							alert(getmsg);
+							return false;
+						};
+					};
+					
+					$(document).scrollTop(0);
+					
+					$form.find("[fun]").each(function(){	
+						_this._thisInfo($(this), $form);
+					});	
+					
+
+					if($form.find(".forms_show:[error='true']").size() <= 0){
+						if(settings.type == 'AJAX'){
+							
+							//loading....
+							$("body").delayBox({msg		: "讀取中...", 
+												src		: "/config/fun/delayBox/load.gif",
+												display	: true,
+												mask	: true
+							});
+							
+							_this._ajax($form, _this._serializeJSON($form), function(ret){
+								//unloading....
+								$("body").delayBox({display: false});
+								
+								if(ret.msg){
+									var MSG = new messageBox();
+									MSG._display(ret.msg);
+								};
+								if(ret.fun)eval(ret.fun);							
+							});
+							
+							return false;
+						};
+					}
+					else{
+						return false;
+					};
+					
+					
+				});		
+			});
+		}
+		
+	});
+})(jQuery);

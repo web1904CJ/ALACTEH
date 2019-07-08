@@ -1,0 +1,215 @@
+/*************************************************************************************
+程式功能		:	表單驗證工具
+建置日期		:	2012-03-36
+版本			:	1.0
+版權所有		:	尚峪資訊科技有限公司 http://www.shang-yu.com.tw
+--------------------------------------------------------------------------------------
+fromsAuth
+表單元件驗證參數(fun)
+
+函式
+checkNull(jquery obj)						:	驗證空白
+checkNum(jquery obj)						:	驗證數字
+checkNumNull(jquery obj)					:	驗證數字必填
+checkEnNum(jquery obj)						:	驗證英文數字
+checkEnNumNull(jquery obj)					:	驗證英文數字必填
+checkPersonID(jquery obj)					:	驗證身份證字號
+checkPersonIDNull(jquery obj)				:	驗證身份證字號必填
+checkEmail(jquery obj)						:	驗證電子信箱
+checkEmailNull(jquery obj)					:	驗證電子信箱必填
+checkItems(jquery obj, jquery formObj)		:	驗證核選方塊及選項方塊
+checkSame(jquery obj, jquery formObj)		:	驗證和checkSame欄位的值是否相同
+checkSameNull(jquery obj, jquery formObj)	:	驗證和checkSame欄位的值是否相同必填
+
+返回值
+PASS	:	為驗證成功
+ERROR	:	為格式錯誤
+NULL	:	欄位空值
+*************************************************************************************/
+var check_tools = {
+	_PASS:	"PASS",
+	_ERROR:	"ERROR",
+	_NULL:	"NULL",
+	checkNull: function($this){	//驗證空值
+		if($.trim($this.val()) == ''){
+			return this._NULL;
+		};
+		return this._PASS;
+	},
+	checkNum: function($this){	//驗證數字
+		var number = "0123456789.";
+		var string;	
+		for(var i = 0;i <= $this.val().length - 1;i++) {
+			string = $this.val().substring(i,i + 1);
+			if(number.indexOf(string) == -1) {
+				return this._ERROR;
+			};
+		};
+		return this._PASS;
+	},
+	checkNumNull: function($this){	//驗證數字必填
+		//驗證空白
+		var ret = check_tools.checkNull($this);
+		if(ret != this._PASS)return ret;
+		
+		var number = "0123456789.";
+		var string;	
+		for(var i = 0;i <= $this.val().length - 1;i++) {
+			string = $this.val().substring(i,i + 1);
+			if(number.indexOf(string) == -1) {
+				return this._ERROR;
+			};
+		};
+		return this._PASS;
+	},
+	checkEnNum: function($this){	//驗證英文數字
+		var number = "00123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-+";
+		var string;	
+		for(var i = 0;i <= $this.val().length - 1;i++) {
+			string = $this.val().substring(i,i + 1);
+			if(number.indexOf(string) == -1) {
+				return this._ERROR;
+			};
+		};
+		return this._PASS;
+	}, 
+	checkEnNumNull	:	function($this){	//驗證英文數字必填	
+		//驗證空白
+		var ret = check_tools.checkNull($this);
+		if(ret != this._PASS)return ret;
+		
+		var number = "00123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-+";
+		var string;	
+		for(var i = 0;i <= $this.val().length - 1;i++) {
+			string = $this.val().substring(i,i + 1);
+			if(number.indexOf(string) == -1) {
+				return this._ERROR;
+			};
+		};
+		return this._PASS;
+	},
+	checkPersonID: function($this){	//驗證身份證字號
+		if($this.val()){
+			var c, n, i;
+			var t = "ABCDEFGHJKLMNPQRSTUVXYWZIO";
+			c = $this.val().substring(0,1);
+			c = t.indexOf(c.toUpperCase());
+			if (($this.val().length != 10) || (c < 0)) {
+				return this._ERROR;
+			};
+			n = parseInt(c/10) + c%10*9 + 1;
+			for (i = 1; i<9; i++) n = n + parseInt($this.val().substring(i, i+1)) * (9-i);
+			n = (10 - (n % 10)) % 10;
+			if (n != parseInt($this.val().substring(9, 10))) {
+				return this._ERROR;
+			};
+		};
+		return this._PASS;
+	},
+	checkPersonIDNull: function($this){	//驗證身份證字號必填	
+		//驗證空白
+		var ret = check_tools.checkNull($this);
+		if(ret != this._PASS)return ret;
+		
+		var c, n, i;
+		var t = "ABCDEFGHJKLMNPQRSTUVXYWZIO";
+		c = $this.val().substring(0,1);
+		c = t.indexOf(c.toUpperCase());
+		if (($this.val().length != 10) || (c < 0)) {
+			return this._ERROR;
+		};
+		n = parseInt(c/10) + c%10*9 + 1;
+		for (i = 1; i<9; i++) n = n + parseInt($this.val().substring(i, i+1)) * (9-i);
+		n = (10 - (n % 10)) % 10;
+		if (n != parseInt($this.val().substring(9, 10))) {
+			return this._ERROR;
+		};
+		return this._PASS;
+	},
+	checkEmail: function($this){	//驗證電子信箱
+		var str_pos  = $this.val().indexOf("@");
+		var str_pos1 = $this.val().indexOf(".");
+		var str_len  = $this.val().length;
+		if(str_len <= 0) {
+			return this._PASS;
+		};
+		var chk_str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-_";
+		if(str_pos != -1 && str_pos1 != -1) {
+			for(var i= 0;i <= str_pos - 1;i++) {
+				if(chk_str.indexOf($this.val().substring(i,i+1)) == -1) {
+					return this._ERROR;
+				};
+			};
+			for(var i= str_pos + 1;i <= $this.val().length - 1;i++) {
+				if(chk_str.indexOf($this.val().substring(i,i+1)) == -1) {
+					return this._ERROR;
+				};
+			};
+			return this._PASS;
+		};
+		return this._ERROR;
+	},
+	checkEmailNull: function($this){	//驗證電子信箱必填
+		//驗證空白
+		var ret = check_tools.checkNull($this);
+		if(ret != this._PASS)return ret;
+		
+		var str_pos  = $this.val().indexOf("@");
+		var str_pos1 = $this.val().indexOf(".");
+		var str_len  = $this.val().length;
+		if(str_len <= 0) {
+			return this._PASS;
+		};
+		var chk_str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-_";
+		if(str_pos != -1 && str_pos1 != -1) {
+			for(var i= 0;i <= str_pos - 1;i++) {
+				if(chk_str.indexOf($this.val().substring(i,i+1)) == -1) {
+					return this._ERROR;
+				};
+			};
+			for(var i= str_pos + 1;i <= $this.val().length - 1;i++) {
+				if(chk_str.indexOf($this.val().substring(i,i+1)) == -1) {
+					return this._ERROR;
+				};
+			};
+			return this._PASS;
+		};
+		return this._ERROR;
+	},
+	checkItems:	function($this, $form){	//驗證核選方塊及選項方塊
+		if($form.find("[name=" + $this.attr('name') + "]:checked").size() == 0){
+			return this._NULL;	
+		}
+		return this._PASS;
+	},
+	checkSame: function($this, $form){	//驗證值是否相同
+		var ret = "";
+		$form.find("[checkSame = 'true']").each(function(){
+			if($this.val() != $(this).val()){
+				ret = check_tools._ERROR;		
+			};
+		});
+		if(ret == this._ERROR)
+			return ret;
+		else
+			return this._PASS;
+	},
+	checkSameNull: function($this, $form){	//驗證值是否相同並必填
+		//驗證空白
+		var ret = check_tools.checkNull($this);
+		if(ret != this._PASS)return ret;
+		
+		var ret = "";
+		$form.find("[checkSame = 'true']").each(function(){
+			if($this.val() != $(this).val()){
+				ret = check_tools._ERROR;		
+			};
+		});
+		if(ret == this._ERROR)
+			return ret;
+		else
+			return this._PASS;
+	}
+};
+
+

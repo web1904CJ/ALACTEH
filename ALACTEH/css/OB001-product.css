@@ -1,0 +1,30 @@
+/*����*/
+.product_menu_out{
+    width:194px;
+    border:1px solid #cecece ;
+    margin: 2px;
+}
+.product_menu_in{
+    background: #f0f0f0;
+    border:1px solid #a5a5a5
+}
+.product_menu_in>:first-child{
+    background-color: #666666;
+}
+.OB001_index li a{
+    color: #333333;
+}
+/*��Ʒ*/
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">>";
+}
+div.shop{width:210px;}
+.details{
+    width: 340px;
+}
+
+.name_18a_bold {
+    font-family: "微軟正黑體",Arial;
+    font-size: 18px;
+    line-height: 20px;
+    }

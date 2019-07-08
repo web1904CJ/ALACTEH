@@ -1,0 +1,606 @@
+.clearfloat { 
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background: url(/upload_files/alatech/images/index/back_up.jpg) top center repeat-x;
+	background-color:#ffffff;
+}
+#wrapper {
+	float: none;
+	width: 1000px;
+	margin: 0px auto;
+}
+#header {
+	float: left;
+	width: 1000px;
+	margin: 0px;
+	padding:0px 0px 0px 0px;
+}
+#content {
+	float: left;
+	width: 1000px;
+	margin: 0px;
+	padding: 0px;
+	background-color:#FFF;
+}
+#footer {
+	float:left;
+	width: 100%;
+	margin: 0px auto;
+	background-color:#FFF;
+}
+#index_logoadbox {
+	float:left;
+	width: 1000px;
+	height:100px;
+	margin:0px;
+	padding:0px 0px 0px 0px;
+}
+#index_logo {
+	float:left;
+	width: 240px;
+	margin:0px;
+	padding:0px 0px 0px 0px;
+}
+#index_top_iconbox {
+	float:left;
+	width: 760px;
+	height:25px;
+	margin:0px;
+	padding:3px 10px 0px 0px;
+}
+.index_top_iconword {
+	color: #ffffff;
+	font-size:12px;
+	font-family:Arial;
+	line-height:20px;
+	text-align:right;
+}
+.index_top_iconword a {
+	color: #ffffff;
+	text-decoration:none;
+}
+.index_top_iconword a:hover {
+	color: #e60012;
+	text-decoration: underline;
+}
+.index_top_iconword span {
+	color:#22b4da;
+	font-size:12px;
+	font-family:Arial;
+	line-height:20px;
+	text-align:right;
+}
+
+
+.languages_titlebox {
+	width:120px;
+}
+.languages_arrow {
+	border-top: 0px solid transparent;
+	border-bottom: 5px solid #d1d1d1;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	width: 0px;
+	height: 0px;
+	display: block;
+	position: absolute;
+	top: -5px;
+	right:60px;
+}
+
+.languagesbox {
+	float:left;
+	width:130px;
+	position: relative;
+	background-color:#e8e8e8;
+	border:1px solid #d1d1d1;
+	border-radius: 3px;
+}
+.languagesbox ul {
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	list-style:none;
+}
+.languagesbox li {
+	float:left;
+	width:104px;
+	margin:0px 0px 0px 0px;
+	padding:0px 6px 0px 10px;
+	font-family: "微軟正黑體",Arial;
+	font-size:13px;
+	line-height:26px;
+	color:#211c23;
+	text-align:left;
+	text-shadow: 0px 1px 1px #fff;
+}
+.languagesbox li a {
+	color:#666666;
+	text-decoration:none;
+}
+.languagesbox li a:hover {
+	color:#666666;
+	text-decoration:underline;
+}
+
+
+#index_menubox {
+	float:left;
+	width: 540px;
+	margin:40px 0px 0px 0px;
+	padding:0px 0px 0px 220px;
+	background:url(/upload_files/alatech/images/index/menu_line.png) right center no-repeat;
+}
+.index_menu_default {
+	float:left;
+	width: 180px;
+	height:60px;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	background:url(/upload_files/alatech/images/index/menu_line.png) left top no-repeat;
+	color:#22b4da;
+	font-size:12px;
+	font-family:Arial;
+	line-height:20px;
+	text-align:right;
+}
+.index_menu_default a {
+	float:left;
+	width: 100px;
+	margin:0px 0px 0px 0px;
+	padding:0px 40px 0px 40px;
+	color:#999999;
+	font-size:12px;
+	font-family: "微軟正黑體",Arial;
+}
+.index_menu_default a:hover {
+	float:left;
+	width: 100px;
+	margin:0px 0px 0px 0px;
+	padding:0px 40px 0px 40px;
+	color:#e60012;
+	font-size:12px;
+	font-family: "微軟正黑體",Arial;
+}
+.index_menu_default span {
+	color:#231815;
+	font-size:24px;
+	font-family: "微軟正黑體",Arial;
+	line-height:18px;
+	font-weight:bold;
+}
+
+.index_menuitembox {
+	float:left;
+	width: 502px;
+	margin:0px;
+	padding:0px 0px 0px 0px;
+}
+.index_itemarrow {
+	border-top: 0px solid transparent;
+	border-bottom: 5px solid #a5a5a5;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	width: 0px;
+	height: 0px;
+	display: block;
+	position: absolute;
+	top: -5px;
+	right:250px;
+}
+.support_itemarrow {
+	border-top: 0px solid transparent;
+	border-bottom: 5px solid #a5a5a5;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	width: 0px;
+	height: 0px;
+	display: block;
+	position: absolute;
+	top: -5px;
+	right:70px;
+}
+
+.index_itembox {
+	float:left;
+	width:502px;
+	padding:5px 5px 5px 5px;
+	border:1px solid #a5a5a5;
+	background:url(/upload_files/alatech/images/index/menu_bk.png) top left repeat;
+}
+.index_itembox ul {
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	list-style:none;
+}
+.index_itembox li {
+	float:left;
+	width:150px;
+	margin:2px 5px 2px 5px;
+	padding:0px 0px 0px 0px;
+	font-family: "微軟正黑體",Arial;
+	font-size:13px;
+	line-height:26px;
+	color:#211c23;
+	text-align:left;
+}
+.index_itembox li a {
+	float:left;
+	width:140px;
+	margin:0px 0px 0px 0px;
+	padding:0px 2px 0px 2px;
+	color:#666666;
+	text-decoration:none;
+	border:1px solid transparent;
+}
+.index_itembox li a:hover {
+	float:left;
+	width:140px;
+	margin:0px 0px 0px 0px;
+	padding:0px 2px 0px 2px;
+	color:#666666;
+	text-decoration:none;
+	border:1px solid #a5a5a5;
+}
+
+#index_infobox {
+	float:left;
+	width: 264px;
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	background-color:#FFF;
+}
+#index_hotnewsbox {
+	float:left;
+	width: 240px;
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	color:#000000;
+	font-size:12px;
+	font-family:Arial;
+	line-height:20px;
+}
+#index_hotnewsbox a {
+	color:#000000;
+	text-decoration:none;
+}
+#index_hotnewsbox a:hover {
+	color:#ff5f00;
+	text-decoration:underline;
+}
+
+#index_topsearchbox {
+	float:left;
+	width: 143px;
+	margin:0px;
+	padding:3px 0px 0px 0px;
+}
+#index_topsearchbox a {
+	color:#000000;
+	text-decoration:none;
+}
+#index_topsearchbox a:hover {
+	color:#ff5f00;
+	text-decoration:underline;
+}
+#index_topsearchicon {
+	float:left;
+	width: 25px;
+	height:21px;
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	background-color:#FFF;
+}
+#index_topsearchcase {
+	float:left;
+	width: 118px;
+	height:21px;
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	background-color:#FFF;
+}
+.index_searchcase {
+	font-family: Arial;
+	color: #666666;
+	font-size:11px;
+	border:0px solid #fff;
+	padding:2px 2px 2px 2px;
+	background-color:#FFF;
+	text-decoration: none;
+}
+#index_sitemapbox {
+	float:left;
+	width: 1000px;
+	margin: 0px;
+	padding: 28px 0px 37px 0px;
+	border-top:4px solid #000;
+	border-bottom:1px solid #000;
+}
+#index_downmenubox {
+	float:left;
+	width: 800px;
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	color:#333;
+	font-size:13px;
+	font-family:Arial;
+	line-height:22px;
+}
+#index_downmenubox ul {
+	margin: 0px;
+	padding: 0px;
+	list-style:none;
+}
+#index_downmenubox li {
+	float:left;
+	width: 180px;
+	margin: 0px;
+	padding: 0px;
+}
+.index_downmenu_title {
+	float:left;
+	width: 180px;
+	height:30px;
+	margin: 0px;
+	padding: 10px 0px 0px 0px;
+	font-size:12px;
+	color:#cccccc;
+	font-family:Arial;
+}
+.index_downmenu_title a {
+	color:#cccccc;
+	text-decoration:none;
+}
+.index_downmenu_title a:hover {
+	text-decoration:none;
+}
+.index_downmenu_title span {
+	color:#000000;
+	font-size:15px;
+	font-weight:bold;
+	font-family: "微軟正黑體",Arial;
+}
+.index_downmenu_sitemap {
+	float:left;
+	width: 180px;
+	margin: 0px;
+	padding: 6px 0px 0px 0px;
+	color:#333;
+	font-size:12px;
+	font-family:Arial;
+	line-height:24px;
+}
+.index_downmenu_sitemap a {
+	color:#999;
+	text-decoration:none;
+}
+.index_downmenu_sitemap a:hover {
+	color:#000;
+	text-decoration:none;
+}
+
+#index_epaperbox {
+	float:left;
+	width: 190px;
+	height:45px;
+	margin:0px;
+	padding:10px 10px 0px 0px;
+	text-align:right;
+}
+.index_epapercase {
+	font-family: Arial;
+	color: #666666;
+	font-size:11px;
+	border:1px solid #000;
+	padding:5px 2px 5px 2px;
+	background-color:#FFF;
+	text-decoration: none;
+}
+#index_fbbox {
+	float:left;
+	width: 200px;
+	margin:0px;
+	padding:102px 0px 0px 0px;
+	text-align:right;
+}
+#index_downinfobox {
+	float: none;
+	width: 1000px;
+	margin: 0px auto;
+	padding: 0px;
+}
+#copyrightbox {
+	float: left;
+	width: 780px;
+	margin:0px;
+	padding:15px 0px 15px 0px;
+	color:#999999;
+	font-size:12px;
+	font-family:Arial;
+	line-height:18px;
+}
+#shangyubox {
+	float: left;
+	width: 140px;
+	margin:0px;
+	padding:6px 0px 15px 0px;
+	color:#999999;
+	font-size:12px;
+	font-family:Arial;
+	line-height:36px;
+	text-align:right;
+}
+#shangyubox a {
+	color:#999999;
+	text-decoration:none;
+}
+#shangyubox a:hover {
+	color:#666666;
+	text-decoration:underline;
+}
+#twcabox {
+	float: left;
+	width: 80px;
+	margin: 0px;
+	padding: 15px 0px 0px 0px;
+}
+
+#main_contentbox {
+	float:left;
+	width: 1000px;
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	color:#999999;
+	font-size:12px;
+	font-family:Arial;
+	background-color:#FFF;
+}
+
+#main_siteinfo {
+	float:left;
+	width: 702px;
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	color:#666;
+	font-size:13px;
+	line-height:0px;
+}
+#main_showup {
+	width:630px;
+	height:22px;
+	text-decoration: none;
+	background:url(/upload_files/alatech/images/index/dot_blue.gif) bottom repeat-x;
+	color:#666;
+	font-family: Arial;
+	font-size: 12px;
+	text-decoration: none;
+}
+#main_page {
+	float:left;
+	width:772px;
+	padding:10px 0px 10px 0px;
+	color:#888888;
+	font-family: Arial;
+	font-size: 12px;
+	border-top:1px solid #ECECEC;
+	text-align:right;
+}
+#main_send {
+	width:772px;
+	padding:10px 0px 10px 0px;
+	text-align: center;
+	border-top:1px solid #ECECEC;
+}
+#main_send_right {
+	width:980px;
+	padding:10px 10px 16px 0px;
+	text-align:right;
+}
+#main_send_center {
+	width:1000px;
+	padding:10px 0px 10px 0px;
+	text-align:center;
+}
+#text_button {
+	float:left;
+	width: 702px;
+	margin:0px;
+	padding:30px 0px 0px 0px;
+	text-align:center;
+}
+
+#siteinfo_indexbox {
+	float:left;
+	padding:0px 2px 0px 2px;
+	font-size:12px;
+	font-family:Arial;
+	color:#fff;
+	line-height:20px;
+	background-color:#cccccc;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+	position: relative;
+}
+#siteinfo_indexbox a {
+	color:#fff;
+	text-decoration:none;
+}
+#siteinfo_indexbox a:hover {
+	color:#fff;
+	text-decoration:underline;
+}
+
+#siteinfo_bigbox {
+	float:left;
+	width:1000px;
+	padding:5px 0px 5px 0px;
+	border-bottom:1px dotted #dedede;
+	font-size:12px;
+	font-family:Arial;
+	color: #666666;
+	line-height:22px;
+	background-color:#FFF;
+}
+#siteinfo_bigbox a {
+	font-size:12px;
+	color: #666666;
+	text-decoration:none;
+}
+#siteinfo_bigbox a:hover {
+	font-size:12px;
+	text-decoration:underline;
+}
+#siteinfo_bigbox span {
+	font-size:12px;
+	font-weight:bold;
+}
+#siteinfo_smallbox {
+	float:left;
+	width:772px;
+	padding:5px 0px 5px 0px;
+	border-bottom:1px dotted #dedede;
+	font-size:12px;
+	font-family:Arial;
+	color: #666666;
+	line-height:22px;
+	background-color:#FFF;
+}
+#siteinfo_smallbox a {
+	font-size:12px;
+	color: #666666;
+	text-decoration:none;
+}
+#siteinfo_smallbox a:hover {
+	font-size:12px;
+	text-decoration:underline;
+}
+#siteinfo_smallbox span {
+	font-size:12px;
+	font-weight:bold;
+}
+#oops_content {
+	float: left;
+	width: 1000px;
+	margin: 0px;
+	padding: 20px 0px 20px 0px;
+}
+#oops_content {
+	text-align:center;
+}
+#webpage {
+	margin:0px auto;
+	width:630px;
+	font-size:13px;
+	font-family:Arial;
+	color: #666666;
+	line-height:22px;
+}

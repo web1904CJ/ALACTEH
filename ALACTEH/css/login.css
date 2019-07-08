@@ -1,0 +1,39 @@
+.web_width li a{
+    color: #333;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">>";
+}
+.login_left{border-right: 1px dashed #cecece;}
+.table_left{
+    width:550px;height:347px;
+}
+td:first-child{width:92px;}
+/*inputøÚ*/
+.login_email,.login_pwd,.login_yz{
+    height:30px;
+    padding:8px;
+    border:1px solid #cccccc;
+    border-radius: 2px;
+}
+.login_email{
+    width:266px;height:30px;
+    padding:8px;
+    border:1px solid #cccccc;
+}
+.login_pwd{
+    width:192px;
+    font-weight: bold;
+}
+.login_yz{
+   height:30px;
+}
+.login_pwd+a{color: red;}
+
+/*table“≥√Ê”“*/
+.table_right{
+    width:400px;height: 385px;
+}
+
+

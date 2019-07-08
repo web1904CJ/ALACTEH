@@ -1,0 +1,29 @@
+/*ÏÂß…¿ò˜ÓÊ½*/
+.bd{
+    border-bottom: 1px solid #cecece;
+}
+.member_title{
+    font-size: 18px;
+    padding-bottom :10px;
+    margin-bottom: 5px;
+}
+table{width:1000px;}
+tr{
+    height: 51px;
+}
+.td_front{width:118px;
+    font:14px  "Î¢ÈíÑÅºÚ";
+}
+.input_case{
+    width:206px;
+    box-sizing: content-box;
+    font:10px Arial;
+    padding: 8px;
+}
+.btn2{
+    background:#999;
+}
+.ema:visited{
+    display: inline;
+    visibility: visible;
+}

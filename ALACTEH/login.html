@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <!-- 引入四个文件，必须注意导入顺序-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/comm.css"/>
+    <link rel="stylesheet" href="css/login.css"/>
+    <title></title>
+</head>
+<body>
+<div class="web_width">
+    <!-- 面包屑导航-->
+    <div>
+        <ul class="breadcrumb bg-white font_small text-muted">
+            <li class="breadcrumb-item"><a href="">首頁</a></li>
+            <li class="breadcrumb-item"><a href="">會員專區</a></li>
+            <li class="breadcrumb-item"><a href="">會員登入</a></li>
+        </ul>
+    </div>
+    <hr/>
+    <!-- 登录頁面左-->
+    <div class="float-left login_left">
+        <table class="table_left font_small">
+            <tr>
+                <td colspan="2">請輸入您的Email和密碼</td>
+            </tr>
+            <tr>
+                <td>Email賬號</td>
+                <td><input class="login_email" type="text"/></td>
+            </tr>
+            <tr>
+                <td>密     碼</td>
+                <td>
+                    <input class="login_pwd" type="text"/>
+                    <a href="">忘記密碼？</a><br/>
+                    <span class="text-muted ">請注意大小寫</span>
+                    <input type="checkbox"/>
+                    <span class="text-muted ">記住我的賬號密碼</span>
+                </td>
+            </tr>
+            <tr>
+                <td>驗 證 碼</td>
+                <td>
+                    <img src="img/login/yanzhengma.PNG" alt=""/>
+                    <input class="login_yz" type="text"/>
+                    <button class="bg-dark text-white font_small px-1 rounded">更換圖示</button>
+                    <br/>
+                    <span class="text-muted font_small">請輸入驗證碼，英文字部分大小寫</span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">請定期更新您的密碼 ，並增加密碼難度，以提高資訊使用安全！</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td align="center"><button class="bg-dark text-white font_small px-2 py-1 rounded">登入</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <!--登陆页面右 -->
+    <div class="float-left p-3">
+        <table class="table_right">
+            <tr>
+                <td class="font_small p-0">快速登录</td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <a><img src="img/login/loginfb.jpg" alt=""/></a>
+                    <a><img src="img/login/logingoogle.jpg" alt=""/></a>
+                </td>
+            <tr>
+                <td class="font_small">
+                    您必需先登入您的會員帳號與密碼，才可以進入本區。<br/>
+                    若於尚未註冊為本站會員，請先 [ 加入成為本站會員 ] <br/>
+                    若您遺忘您的帳號、密碼資訊，可至 [ 取回密碼 ] 功能中取得您原本設定的密碼資料。 <br/>
+                    您必需輸入驗證碼後才可以登入，驗證碼已顯示於該欄位上。<br/>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <button class="bg-dark text-white font_small px-4 py-1 rounded">立即加入會員</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <!-- 引入四个文件，必须注意导入顺序-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/comm.css"/>
+    <link rel="stylesheet" href="css/registe.css"/>
+    <title></title>
+</head>
+<body>
+<div class="web_width">
+    <div class="member_title bd">加入會員</div>
+    <p class="font_small">按下加入會員的按鈕即表示，您確認已閱讀並同意ALATECH隱私權聲明與條款及條件。</p>
+    <div class="bg-secondary font_small text-white p-2">賬戶資料</div>
+    <!-- 账户资料-->
+    <div>
+        <table>
+            <tr class="bd">
+                <td class="td_front">Email賬號</td>
+                <td>
+                    <input name="email " class="email border input_case" type="text" />
+                </td>
+            </tr>
+            <tr class="bd">
+                <td class="td_front">密    碼</td>
+                <td><input name="upwd" class="border input_case" type="text"/></td>
+            </tr>
+            <tr>
+                <td class="td_front">確認密碼</td>
+                <td><input name="u_pwd" class="border input_case" type="text"/></td>
+            </tr>
+        </table>
+    </div>
+    <!-- 会员基本资料-->
+    <div class="bg-secondary font_small text-white p-2">會員基本資料</div>
+    <div >
+        <table>
+            <tr class="bd">
+                <td class="td_front">姓名</td>
+                <td><input name="uname" class="border input_case" type="text"/></td>
+            </tr>
+            <tr class="bd">
+                <td>性別</td>
+                <td class="font_small">
+                    <input type="radio" name="gender" value="1"/>先生
+                    <input class="ml-2" type="radio" name="gender" value="0"/>小姐
+                </td>
+            </tr>
+            <tr class="bd">
+                <td class="td_front">電話</td>
+                <td><input name="phone" class="border input_case" type="text"/></td>
+            </tr>
+            <tr  class="bd">
+                <td align="center" colspan="2" class="td_front">
+                    <input type="checkbox"/>當您勾選後，即視同您已同意遵守 本網站個人隱私權政策。
+                </td>
+            </tr>
+        </table>
+        <div align="center" class="mt-2" >
+            <button class="bg-dark text-white font_small px-2 py-1">加入會員</button>
+            <button class="btn2 text-white font_small px-2 py-1">重新填寫</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

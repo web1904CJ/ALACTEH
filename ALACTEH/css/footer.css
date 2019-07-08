@@ -1,0 +1,23 @@
+.top_footer{
+    border-top: 4px solid #000;
+    padding:50px 0;
+}
+.bottom_footer{
+    border-top: 2px solid #000;
+    padding:40px 0;
+}
+.s1{
+    color: #1b1b1b;
+    font:12px Arial;
+    font-weight: bold;
+    line-height: 20px;
+}
+.s2{
+    color: #1b1b1b;
+    font: 12px Arial;
+    line-height: 20px;
+}
+.s3{
+    font-size: 12px;
+    color:#999999;
+}

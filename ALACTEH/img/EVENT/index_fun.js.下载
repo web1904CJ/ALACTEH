@@ -1,0 +1,470 @@
+//解析Hash
+function getSendToArr(hash){
+	if(hash.indexOf('#') == 0)hash = hash.substr(1);
+	hash = hash.split('&');
+	
+	var datas = [];
+	for(k in hash){		
+		var tmp = hash[k].split('=');
+		datas[tmp[0]] = tmp[1];
+	};
+	
+	return datas;
+};
+
+//轉成&k=v&k=v字串的值
+function getKeyValueStr(hash){
+	hash = hash.substr(1);	
+	return "&" + hash;
+};
+
+//回上頁下頁ajax
+function LoadPages($obj){
+	//判斷避免重覆執行ajax換頁
+	if(_SYSTEM.IS_AJAXed == true){
+		_SYSTEM.IS_AJAXed = false;
+		return;
+	};
+
+	var datas = getSendToArr(window.location.hash);
+	if(!datas['url'])return false;
+	
+	var send  = getKeyValueStr(window.location.hash);
+	
+	$("body").delayBox({msg		: "讀取中...", 
+						src		: "/config/fun/delayBox/load.gif",
+						display	: true,
+						mask	: true
+	});
+	
+	ajaxRequest(datas['url'], send, function(html){
+		$obj.html(html);
+		$("body").delayBox({display: false});											   
+	}, 'html');
+	
+	//menu
+	if(window.location.hash){
+		$("#index_menubox ul li img").each(function(){
+			$(this).attr('src', $(this).attr('src').replace('o.jpg', '.jpg'));											
+		});
+		var MD = getSendToArr(window.location.hash);	
+		var $MDimg = $("#index_menubox ul li[menu='" + datas['menu'] + "'] img");
+		$MDimg.attr('src', $MDimg.attr('src').replace('.jpg', 'o.jpg'));	
+		
+		$("#main_icontitlebox").html($MDimg.parent('li').attr('menustr'));
+	};
+	
+	//iconv
+	if(window.location.hash){
+		$("#main_iconbox ul li").attr('class', 'main_icon_default');
+		
+		//自動focus此選項
+		var tmp = window.location.hash.split('/')[0].substr(1);
+		$("#main_iconbox").find('a').each(function(){							
+			if($(this).attr('send').split(tmp)[1]){
+				$(this).parent('li').attr('class', 'main_icon_focus');	
+			};			
+		});
+	
+		$("#main_iconbox ul").hide();	
+		var $ICDu = $("#main_iconbox ul[menu='" + datas['menu'] + "']");
+		$ICDu.show();	
+	}
+	else{
+		$("#main_iconbox ul:eq(0)").show();	
+	};
+};
+
+//非同步AJAX
+function ajaxRequest(url, send, callback, dataType){	
+	var loc = window.location.toString();
+	loc		= loc.match(/\?uniqid=\w+/).toString().substr(1);
+	send += "&" + loc;
+	
+	$.ajax({
+	   type		:	"POST",
+	   url		:	url,
+	   dataType	:	dataType,
+	   async	:	true,
+	   data		:	send,
+	   success	:	function(html){
+			if($.isFunction(callback))callback(html);
+	   }
+	});
+};
+
+//背景執行後切換頁面
+function backGo(url, send){
+	if(window.location.hash)send += getKeyValueStr(window.location.hash);
+	
+	$("body").delayBox({msg		: "讀取中...", 
+						src		: "/config/fun/delayBox/load.gif",
+						display	: true,
+						mask	: true
+	});
+	
+	ajaxRequest(url, send, 
+		function(html){
+			$('#main_rightbox').html(html);	
+			$('body').delayBox({display: false});
+	}, 'html');	
+};
+
+function rawurldecode (str) {
+	return decodeURIComponent(str);
+}
+function rawurlencode (str) {
+    str = (str+'').toString();
+    return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/\*/g, '%2A');
+}
+function utf8_decode ( str_data ) {
+	var tmp_arr = [], i = 0, ac = 0, c1 = 0, c2 = 0, c3 = 0;
+	str_data += '';
+	while ( i < str_data.length ) {
+		c1 = str_data.charCodeAt(i);
+		if (c1 < 128) {
+			tmp_arr[ac++] = String.fromCharCode(c1);
+			i++;
+		} else if ((c1 > 191) && (c1 < 224)) {
+			c2 = str_data.charCodeAt(i+1);
+			tmp_arr[ac++] = String.fromCharCode(((c1 & 31) << 6) | (c2 & 63));
+			i += 2;
+		} else {
+			c2 = str_data.charCodeAt(i+1);
+			c3 = str_data.charCodeAt(i+2);
+			tmp_arr[ac++] = String.fromCharCode(((c1 & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+			i += 3;
+		}
+	}
+	return tmp_arr.join('');
+}
+function base64_decode(data) {		
+	var b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+	var o1, o2, o3, h1, h2, h3, h4, bits, i = 0, ac = 0, dec = "", tmp_arr = [];
+ 
+	if (!data) {
+		return data;
+	}
+	data += '';
+	do {  // unpack four hexets into three octets using index points in b64
+		h1 = b64.indexOf(data.charAt(i++));
+		h2 = b64.indexOf(data.charAt(i++));
+		h3 = b64.indexOf(data.charAt(i++));
+		h4 = b64.indexOf(data.charAt(i++));
+ 
+		bits = h1<<18 | h2<<12 | h3<<6 | h4;
+ 
+		o1 = bits>>16 & 0xff;
+		o2 = bits>>8 & 0xff;
+		o3 = bits & 0xff;
+ 
+		if (h3 == 64) {
+			tmp_arr[ac++] = String.fromCharCode(o1);
+		} else if (h4 == 64) {
+			tmp_arr[ac++] = String.fromCharCode(o1, o2);
+		} else {
+			tmp_arr[ac++] = String.fromCharCode(o1, o2, o3);
+		}
+	} while (i < data.length);
+ 
+	dec = tmp_arr.join('');
+	dec = utf8_decode(dec);
+ 
+	return dec;
+}
+function utf8_encode(argString) {		
+	var string = (argString+'').replace(/\r\n/g, "\n").replace(/\r/g, "\n");	 
+	var utftext = "";
+	var start, end;
+	var stringl = 0;
+ 
+	start = end = 0;
+	stringl = string.length;
+	for (var n = 0; n < stringl; n++) {
+		var c1 = string.charCodeAt(n);
+		var enc = null;
+ 
+		if (c1 < 128) {
+			end++;
+		} else if((c1 > 127) && (c1 < 2048)) {
+			enc = String.fromCharCode((c1 >> 6) | 192) + String.fromCharCode((c1 & 63) | 128);
+		} else {
+			enc = String.fromCharCode((c1 >> 12) | 224) + String.fromCharCode(((c1 >> 6) & 63) | 128) + String.fromCharCode((c1 & 63) | 128);
+		}
+		if (enc !== null) {
+			if (end > start) {
+				utftext += string.substring(start, end);
+			}
+			utftext += enc;
+			start = end = n+1;
+		}
+	}
+ 
+	if (end > start) {
+		utftext += string.substring(start, string.length);
+	}
+ 
+	return utftext;
+}
+function base64_encode( data ) {					
+	var b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+	var o1, o2, o3, h1, h2, h3, h4, bits, i = 0, ac = 0, enc="", tmp_arr = [];
+ 
+	if (!data) {
+		return data;
+	}
+ 
+	data = utf8_encode(data+'');
+	
+	do { // pack three octets into four hexets
+		o1 = data.charCodeAt(i++);
+		o2 = data.charCodeAt(i++);
+		o3 = data.charCodeAt(i++);	 
+		bits = o1<<16 | o2<<8 | o3;	 
+		h1 = bits>>18 & 0x3f;
+		h2 = bits>>12 & 0x3f;
+		h3 = bits>>6 & 0x3f;
+		h4 = bits & 0x3f;
+ 
+		// use hexets to index into b64, and append result to encoded string
+		tmp_arr[ac++] = b64.charAt(h1) + b64.charAt(h2) + b64.charAt(h3) + b64.charAt(h4);
+	} while (i < data.length);
+	
+	enc = tmp_arr.join('');
+	
+	switch( data.length % 3 ){
+		case 1:
+			enc = enc.slice(0, -2) + '==';
+		break;
+		case 2:
+			enc = enc.slice(0, -1) + '=';
+		break;
+	}
+ 
+	return enc;
+}
+function stripslashes (str) {
+    return (str + '').replace(/\\(.?)/g, function (s, n1) {
+        switch (n1) {
+        case '\\':
+            return '\\';
+        case '0':
+            return '\u0000';
+        case '':
+            return '';
+        default:
+            return n1;
+        };
+    });
+}
+function in_array(needle, haystack, argStrict){
+	var key = '', strict = !! argStrict;
+	
+	if(strict){
+		for(key in haystack){
+			if(haystack[key] === needle){
+				return true;	
+			};
+		};
+	}
+	else{
+		for(key in haystack){
+			if(haystack[key] == needle){
+				return true;	
+			};
+		};
+	};
+	
+	return false;
+}
+
+
+//單檔上傳
+function do_uploadify(ObjID, SaveID, Path, FileType, doFun, viewImgSize, showPath){	
+	$(document).ready(function(){
+		$('#' + ObjID).uploadify({
+			'uploader'       : '/plugin/uploadify/flash/uploadify.swf',
+			'script'         : '/oper/upload-p.php',
+			'cancelImg'      : '/plugin/uploadify/cancel.png',
+			'folder'         : Path,
+			'auto'           : true,
+			'fileExt'        : FileType,
+			'fileDesc'       : FileType,
+			'sizeLimit'		 : 2048000000,
+			'queueID'        : ObjID + '_QueQue',
+			'scriptData'	 : {'doFun': doFun},
+			'onInit'		 : function(){
+				var val = $("#" + ObjID + "_QueQue").find("#" + SaveID).val();
+				if(val){
+					if (showPath)
+						tmpPath = showPath;
+					else
+						tmpPath = Path;
+						
+					var thePathItem = ExtChk(tmpPath, rawurldecode(val));
+					
+					$("#" + ObjID + "_QueQue").css({margin: 5}).find('.info').html('<a href="javascript:;" id="shui_del_uploadify_' + ObjID + '" class="shui_del_uploadify">' +
+																  '<img src="/oper/images/button10.gif" border="0">' +
+																  '</a>' +
+																  thePathItem
+																  );
+					$("#shui_del_uploadify_" + ObjID).one("click",function(){
+						$("#" + ObjID + "_QueQue").find('.info').html('');	
+						$("#" + ObjID + "_QueQue").find("#" + SaveID).val('');
+					});					
+				};
+			},
+			'onComplete'     : function(event,ID, fileObj, response, data){
+				response = $.trim(response);
+				if(response == 'error'){
+					$('#' + $(event.target).attr('id') + ID).parents('#' + ObjID +'_QueQue').find('.info').text('上傳失敗!');
+					return false;	
+				};
+				var thePathItem = ExtChk(Path,stripslashes(rawurldecode(response)));
+				
+				$('#' + $(event.target).attr('id') + ID).parents('#' + ObjID + '_QueQue').find('.info')
+				.html('<a href="javascript:;" id="shui_del_uploadify_' + ObjID + '" class="shui_del_uploadify">' + 
+					  '<img src="/oper/images/button10.gif" border="0">' + 
+					  '</a>' + 
+					  thePathItem				  
+				);				
+				$("#shui_del_uploadify_" + ObjID).one("click",function(){
+						$("#" + ObjID + "_QueQue").find('.info').html('');	
+						$("#" + ObjID + "_QueQue").find("#" + SaveID).val('');
+				});
+				
+				$('#' + $(event.target).attr('id') + ID).parents('#' + ObjID + '_QueQue').css({margin: 5}).find('#'+SaveID).val(stripslashes(rawurldecode(response)));
+			}
+		});				
+	});
+	
+	function ExtChk(Path, valPath){
+		var thePath = valPath;
+		var thePath = thePath.split(".");
+		var Ext = thePath[thePath.length - 1];
+		var thePathItem = "";
+		
+		//縮小一半
+		if(viewImgSize){
+			var pw = 'width="' + parseInt(viewImgSize.width / 2) + '"';	
+			var pa = parseInt(viewImgSize.width / 2) / viewImgSize.width;
+			var ph = 'height="' + parseInt(pa * viewImgSize.height) + '"';
+		}
+		
+		(Ext == 'jpg' || Ext == 'gif' || Ext == 'png' || Ext == 'bmp')?
+			thePathItem = '<a href="' + Path +'/' + valPath + '" class="shui_down_uploadify" target="_blank">' + 
+						  '<img src="' + Path +'/' + valPath  + '"' + pw + ' ' + ph + ' border="0">' + 
+						  '</a>':	
+			thePathItem = '<a href="' + Path +'/' + valPath + '" class="shui_down_uploadify" target="_blank">' + valPath + '</a>' ;
+		
+		return thePathItem;
+	};
+};
+
+//批次上傳
+function uploadify_multi(Path, Script, FileType, Pic_Size, Over){
+	$('#Filedata_Multi').uploadify({
+		'uploader'       : '/plugin/uploadify/flash/uploadify.swf',
+		'script'         : Script,
+		'cancelImg'      : '/plugin/uploadify/cancel.png',
+		'folder'         : Path,
+		'multi'          : true,
+		'auto'           : true,
+		'fileExt'        : FileType,
+		'fileDesc'       : FileType,
+		'queueID'        : 'custom-queue',
+		'queueSizeLimit' : 99,
+		'simUploadLimit' : 99,
+		'removeCompleted': false,
+		'sizeLimit'		 : 2048000000,
+		'scriptData'	 : {'pic_size':Pic_Size, 'Over':Over},
+		'onOpen'		 : function (event,ID,fileObj){
+			$('#' + $(event.target).attr('id') + ID).append('<br /><span class="info">等待傳輸中</span>');
+		},
+		'onProgress'  : function(event,ID,fileObj,data) {
+			var bytes = Math.round(data.bytesLoaded / 1024);
+			var AllBytes = Math.round(fileObj.size / 1024);
+			
+			if(data.percentage > 95){
+				var info = '上傳尚未完成檔案搬移中請稍侯!';	
+			}
+			else{
+				var info = '(上傳中) ' + bytes + 'KB / ' + AllBytes;	
+			}
+			
+			$('#' + $(event.target).attr('id') + ID).find('.info').html(info);
+		},
+		'onSelectOnce'   : function(event,data) {
+			$('#status-message').text(data.filesSelected + ' 個檔案放到上傳佇列中.');
+		},
+		'onComplete' : function(event,ID,fileObj,response,data){
+			response = $.trim(response);
+			if(response == 'error'){
+				$('#' + $(event.target).attr('id') + ID).find('.info').html('上傳失敗');	
+				return;
+			}
+			$('#' + $(event.target).attr('id') + ID).find('.info').html('上傳成功');
+			$('#' + $(event.target).attr('id') + ID).append('<input type="hidden" id="Uploadify_Path" name="Uploadify_Path" value="' + rawurldecode(response) + '">');
+		},
+		'onAllComplete'  : function(event,data) {
+			var errStr = '';
+			if(data.errors > 0){
+				errStr = ', ' + data.errors + ' 個上傳失敗.';	
+			}
+			$('#status-message').text(data.filesUploaded + ' 個上傳完成' + errStr);
+		}
+	});			
+};
+
+
+//網頁編輯器-門面模式。簡化編輯器操作的介面
+var FacadeEditor = function(){
+	
+	//創建
+	this.create = function(id, option){
+		var settings  = {
+			resizeType: 1,
+			items : [
+				'source', '|', 'undo', 'redo', '|', 'preview', 'cut', 'copy', 'paste',
+				'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+				'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+				'superscript', 'clearhtml', 'selectall', '|', 'fullscreen', '/',
+				'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+				'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image',
+				'insertfile', 'table', 'hr',
+				'link', 'unlink'
+			],
+			themeType: 'simple'
+		};
+		
+		$.extend(settings, option);
+		
+		return KindEditor.create("textarea[id='" + id + "']", settings);
+	};
+	
+	//取值
+	this.getValue = function(editor){
+		return editor.html();
+	};
+};
+
+//jquery-UI門面模式
+var FacadeJquery = function(){
+	
+	//日期
+	this.datepicker = function(s, option){
+		var settings = {
+						buttonImage: 'images/calendar.gif',
+						changeMonth:true,
+						changeYear:true,
+						dateFormat:"yy-mm-dd",
+						monthNamesShort:['1','2','3','4','5','6','7','8','9','10','11','12']
+					   };
+		$.extend(settings, option);
+		
+		$(s).datepicker(settings);	
+	};
+	
+	
+};
+

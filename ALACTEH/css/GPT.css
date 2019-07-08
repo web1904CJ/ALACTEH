@@ -1,0 +1,19 @@
+/*导航栏*/
+.product_menu_out{
+    width:194px;
+    border:1px solid #cecece ;
+    margin-right: 16px;
+}
+.product_menu_in{
+    background: #f0f0f0;
+    border:1px solid #a5a5a5
+}
+.product_menu_in>:first-child{
+    background-color: #666666;
+}
+.product_menu_in li a{
+    color: #333333;
+}
+.GPT{
+    width: 790px;
+}

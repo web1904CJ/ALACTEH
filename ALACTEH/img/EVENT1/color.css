@@ -1,0 +1,770 @@
+body {
+}
+form {
+	display:inline;
+}
+.black_12a {
+	color:#1b1b1b;
+	font-family:Arial;
+	font-size:12px;
+	line-height:20px;
+}
+.black_12a_bold {
+	color:#1b1b1b;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	line-height:20px;
+}
+.black_13a {
+	color:#000000;
+	font-family:Arial;
+	font-size:13px;
+	line-height:20px;
+}
+.black_13a_bold {
+	color:#000000;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	line-height:20px;
+}
+.black_13a_line {
+	color:#1b1b1b;
+	font-family:Arial;
+	font-size:13px;
+	line-height:20px;
+	text-decoration:underline;
+}
+.black_13a_bold_line {
+	font-family:Arial;
+	font-size:13px;
+	color:#000000;
+	font-weight:bold;
+	line-height:20px;
+	text-decoration: underline;
+}
+
+.black_15a {
+	color:#000;
+	font-family:Arial;
+	font-size:15px;
+	line-height:20px;
+}
+.black_15a_bold {
+	color:#000;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	line-height:20px;
+}
+.black_gray_12a {
+	color:#333333;
+	font-family:Arial;
+	font-size:12px;
+	line-height:24px;
+}
+.black_gray_13a {
+	color:#333333;
+	font-family:Arial;
+	font-size:13px;
+	line-height:24px;
+}
+
+.blue_12a {
+	font-family:Arial;
+	font-size:12px;
+	color:#0069d4;
+	line-height:20px;
+}
+.blue_12a_line {
+	font-family:Arial;
+	font-size:12px;
+	color:#0069d4;
+	line-height:20px;
+	text-decoration: underline;
+}
+.blue_13a {
+	font-family:Arial;
+	font-size:13px;
+	color:#0069d4;
+	line-height:20px;
+}
+
+.blue_13a_bold {
+	font-family:Arial;
+	font-size:13px;
+	color:#0069d4;
+	font-weight:bold;
+	line-height:20px;
+}
+.blue_13a_line {
+	font-family:Arial;
+	font-size:13px;
+	color:#0069d4;
+	line-height:20px;
+	text-decoration: underline;
+}
+.blue_13a_bold_line {
+	font-family:Arial;
+	font-size:13px;
+	color:#0069d4;
+	font-weight:bold;
+	line-height:20px;
+	text-decoration: underline;
+}
+.blue_15a {
+	font-family:Arial;
+	font-size:15px;
+	color:#0069d4;
+	line-height:20px;
+}
+.blue_15a_bold {
+	font-family:Arial;
+	font-size:15px;
+	color:#0069d4;
+	font-weight:bold;
+	line-height:20px;
+}
+.blue_30a_bold {
+	font-family:"微軟正黑體",Arial;
+	font-size:30px;
+	color:#0069d4;
+	line-height:30px;
+}
+
+.coffee_12a {
+	font-family:Arial;
+	font-size:12px;
+	color:#663300;
+	line-height:20px;
+}
+.coffee_13a {
+	font-family:Arial;
+	font-size:13px;
+	color:#663300;
+	line-height:20px;
+}
+.coffee_13a_bold {
+	font-family:Arial;
+	font-size:13px;
+	color:#663300;
+	line-height:20px;
+	font-weight:bold;
+}
+.coffee_15a {
+	font-family:Arial;
+	font-size:15px;
+	color:#663300;
+	line-height:20px;
+}
+.coffee_15a_bold {
+	font-family:Arial;
+	font-size:15px;
+	color:#663300;
+	line-height:20px;
+	font-weight:bold;
+}
+
+.gray_12a {
+	font-family:Arial;
+	font-size:12px;
+	color:#666666;
+	line-height:20px;
+}
+.gray_12a_bold {
+	font-family:Arial;
+	font-size:12px;
+	color:#666666;
+	line-height:20px;
+	font-weight:bold;
+}
+.gray_12a_line {
+	font-family:Arial;
+	font-size:12px;
+	color:#999999;
+	line-height:20px;
+	text-decoration: line-through;
+}
+.gray_13a {
+	font-family:Arial;
+	font-size:13px;
+	color:#666666;
+	line-height:20px;
+}
+.gray_15a {
+	font-family:Arial;
+	font-size:15px;
+	color:#666666;
+	line-height:20px;
+}
+.green_12a {
+	font-family:Arial;
+	font-size:12px;
+	color:#009944;
+	line-height:20px;
+}
+.green_13a {
+	font-family:Arial;
+	font-size:13px;
+	color:#009944;
+	line-height:20px;
+}
+.green_13a_bold {
+	font-family:Arial;
+	font-size:13px;
+	color:#009944;
+	font-weight:bold;
+	line-height:20px;
+}
+.green_15a {
+	font-family:Arial;
+	font-size:15px;
+	color:#009944;
+	line-height:24px;
+}
+.green_15a_bold {
+	font-family:Arial;
+	font-size:15px;
+	color:#009944;
+	font-weight:bold;
+	line-height:24px;
+}
+.green_17a_bold {
+	font-family:Arial;
+	font-size:17px;
+	color:#009944;
+	font-weight:bold;
+	line-height:24px;
+}
+.green_30a_bold {
+	font-family: "微軟正黑體",Arial;
+	font-size:30px;
+	color:#009944;
+	line-height:30px;
+}
+
+.green_dark_13a {
+	font-family:Arial;
+	font-size:13px;
+	color:#506e26;
+	line-height:20px;
+}
+.green_dark_13a_bold {
+	font-family:Arial;
+	font-size:13px;
+	color:#506e26;
+	line-height:20px;
+	font-weight:bold;
+}
+
+.pink_13a {
+	font-family:Arial;
+	font-size:13px;
+	color:#e62178;
+	line-height:20px;
+}
+.pink_13a_bold {
+	font-family:Arial;
+	font-size:13px;
+	color:#e62178;
+	font-weight:bold;
+	line-height:20px;
+}
+.pink_15a {
+	font-family:Arial;
+	font-size:15px;
+	color:#e62178;
+	line-height:20px;
+}
+.pink_15a_bold {
+	font-family:Arial;
+	font-size:15px;
+	color:#e62178;
+	font-weight:bold;
+	line-height:20px;
+}
+.red_12a {
+	font-family:Arial;
+	font-size:12px;
+	color:#ed1c24;
+	line-height:20px;
+}
+.red_12a_bold {
+	font-family:Arial;
+	font-size:12px;
+	color:#ed1c24;
+	font-weight:bold;
+	line-height:20px;
+}
+.red_13a {
+	font-family:Arial;
+	font-size:13px;
+	color:#ed1c24;
+	line-height:20px;
+}
+.red_13a_bold {
+	font-family:Arial;
+	font-size:13px;
+	color:#ed1c24;
+	font-weight:bold;
+	line-height:20px;
+}
+.red_13a_line {
+	font-family:Arial;
+	font-size:13px;
+	color:#ed1c24;
+	font-weight:bold;
+	line-height:20px;
+	text-decoration:underline;
+}
+.red_13a_bold_line {
+	font-family:Arial;
+	font-size:13px;
+	color:#ed1c24;
+	font-weight:bold;
+	line-height:20px;
+	text-decoration: underline;
+}
+.red_15a {
+	font-family:Arial;
+	font-size:15px;
+	color:#ED1C24;
+	line-height:20px;
+}
+.red_15a_bold {
+	font-family:Arial;
+	font-size:15px;
+	color:#ED1C24;
+	font-weight:bold;
+	line-height:20px;
+}
+.red_17a_bold {
+	font-family:Arial;
+	font-size:17px;
+	color:#ED1C24;
+	font-weight:bold;
+}
+.red_18a_bold {
+	font-family:Arial;
+	font-size:18px;
+	color:#ED1C24;
+	line-height:26px;
+}
+.red_24a_bold {
+	font-family:Arial;
+	font-size:24px;
+	color:#ED1C24;
+	line-height:26px;
+}
+.red_30a_bold {
+	font-family: "微軟正黑體",Arial;
+	font-size:30px;
+	color:#ED1C24;
+	line-height:30px;
+}
+
+.orange_12a {
+	font-family:Arial;
+	font-size:12px;
+	color:#f7941d;
+	line-height:20px;
+}
+.orange_12a_bold {
+	font-family:Arial;
+	font-size:12px;
+	color:#f7941d;
+	font-weight:bold;
+	line-height:20px;
+}
+.orange_13a {
+	font-family:Arial;
+	font-size:13px;
+	color:#f7941d;
+	line-height:20px;
+}
+.orange_13a_bold {
+	font-family:Arial;
+	font-size:13px;
+	color:#f7941d;
+	font-weight:bold;
+	line-height:20px;
+}
+.orange_15a_bold {
+	font-family:Arial;
+	font-size:15px;
+	color:#f7941d;
+	font-weight:bold;
+	line-height:20px;
+}
+.orange_18a_bold {
+	font-family:Arial;
+	font-size:18px;
+	color:#f7941d;
+	font-weight:bold;
+	line-height:20px;
+}
+.yellow_12a {
+	font-family:Arial;
+	font-size:12px;
+	color:#FC0;
+	line-height:20px;
+}
+.yellow_15a_bold {
+	font-family:Arial;
+	font-size:15px;
+	color:#fea700;
+	font-weight:bold;
+	line-height:20px;
+}
+.white_12a {
+	font-family:Arial;
+	font-size:12px;
+	color:#ffffff;
+	line-height:20px;
+}
+.white_12a_bold {
+	font-family:Arial;
+	font-size:12px;
+	color:#ffffff;
+	font-weight:bold;
+	line-height:20px;
+}
+.white_13a {
+	font-family:Arial;
+	font-size:13px;
+	color:#ffffff;
+	line-height:20px;
+}
+.white_13a_bold {
+	font-family:Arial;
+	font-size:13px;
+	color:#ffffff;
+	font-weight:bold;
+	line-height:20px;
+}
+.white_15a {
+	font-family:Arial;
+	font-size:15px;
+	color:#ffffff;
+	line-height:20px;
+}
+.white_15a_bold {
+	font-family:Arial;
+	font-size:15px;
+	color:#ffffff;
+	font-weight:bold;
+	line-height:20px;
+}
+
+
+.brown_12a {
+	font-family:Arial;
+	font-size:12px;
+	color:#3a302e;
+	line-height:20px;
+}
+.brown_12a_bold {
+	font-family:Arial;
+	font-size:12px;
+	color:#3a302e;
+	line-height:20px;
+	font-weight:bold;
+}
+.brown_13a {
+	font-family:Arial;
+	font-size:13px;
+	color:#3a302e;
+	line-height:20px;
+}
+.brown_13a_bold {
+	font-family:Arial;
+	font-size:13px;
+	color:#3a302e;
+	line-height:20px;
+	font-weight:bold;
+}
+.brown_15a {
+	font-family:Arial;
+	font-size:15px;
+	color:#3a302e;
+	line-height:20px;
+}
+.brown_15a_bold {
+	font-family:Arial;
+	font-size:15px;
+	color:#3a302e;
+	line-height:20px;
+	font-weight:bold;
+}
+
+
+.dot_table1 {
+	color: #000000;
+	padding-right:10px;
+	padding-left:45px;
+	font-family:"微軟正黑體";
+	font-size:14px;
+	font-weight:bold;
+	line-height:20px;
+	background:url(/upload_files/alatech/images/member/focus2.gif) center left no-repeat;
+}
+.dot_table2 {
+	color: #000000;
+	padding-right:10px;
+	padding-left:45px;
+	font-family:"微軟正黑體";
+	font-size:14px;
+	font-weight:bold;
+	line-height:20px;
+	background:url(/upload_files/alatech/images/member/focus.gif) center left no-repeat;
+}
+.dot_gray {
+	color: #000000;
+	padding-right:10px;
+	font-family:"微軟正黑體";
+	font-size:14px;
+	font-weight:bold;
+	line-height:20px;
+	text-align:right;
+	background:url(/upload_files/alatech/images/member/default.gif) center left no-repeat;
+}
+.dot_balck {
+	color: #000000;
+	padding-right:10px;
+	font-family:"微軟正黑體";
+	font-size:14px;
+	font-weight:bold;
+	line-height:20px;
+	text-align:right;
+	background:url(/upload_files/alatech/images/member/focus.gif)  center left no-repeat;
+}
+
+
+.table_left {
+	padding-right:10px;
+	text-align:right;
+	color: #3a302e;
+}
+.table_right {
+	border-right:0px solid #666666;
+	border-bottom:1px solid #e7e7e7;
+}
+
+.table_default {
+	color: #666666;
+	padding-right:10px;
+	padding-left:20px;
+	font-family:"微軟正黑體";
+	font-size:14px;
+	font-weight:bold;
+	line-height:20px;
+	text-align:right;
+	border-left:0px solid #e7e7e7;
+	border-bottom:1px solid #e7e7e7;
+	background:url(/upload_files/alatech/images/member/default.gif) center left no-repeat;
+}
+.table_focus {
+	color: #000000;
+	padding-right:10px;
+	padding-left:20px;
+	font-family:"微軟正黑體";
+	font-size:14px;
+	font-weight:bold;
+	line-height:20px;
+	text-align:right;
+	border-color: #e7e7e7 #a1a1a1 #e7e7e7 #e7e7e7;
+	border-style: solid solid solid solid;
+	border-width: 0px 0px 1px 0px;
+	background:url(/upload_files/alatech/images/member/focus.gif) center left no-repeat;
+}
+.table_title {
+	height:32px;
+	text-align:center;
+	font-size:13px;
+	line-height:20px;
+	color: #3a302e;
+	background-color:#cccccc;
+}
+.table_black {
+	background-color:#333;
+}
+.table_black_gray {
+	background-color:#666;
+}
+.table_gray_white {
+	background-color:#e7e7e7;
+}
+.table_fillet {
+	border-radius: 3px;
+/*	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-color: #e7e7e7;
+	border-style: solid solid none solid;
+	border-width: 1px 1px 0 1px;
+*/}
+.table_fillet4 {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-color: #e7e7e7;
+	border-style: solid solid none solid;
+	border-width: 1px 1px 0 1px;
+}
+
+.table_blue {
+	height:36px;
+	text-align:center;
+	font-size:13px;
+	line-height:20px;
+	color: #000000;
+	background-color:#b1eef7;
+}
+.table_orange {
+	height:36px;
+	text-align:center;
+	font-size:13px;
+	line-height:20px;
+	color: #000000;
+	background-color:#ffdd9a;
+}
+.table_geay {
+	height:36px;
+	text-align:center;
+	font-size:13px;
+	line-height:20px;
+	color: #000000;
+	background:url(/upload_files/alatech/images/member/line_gray2.jpg) bottom left repeat-x;
+}
+.table_white {
+	height:36px;
+	text-align:center;
+	font-size:13px;
+	line-height:20px;
+	color: #3a302e;
+	padding:5px 0px 5px 0px;
+}
+.table_linel {
+	height:36px;
+	color:#000;
+	text-align:center;
+	border-right:1px solid #e7e7e7;
+}
+
+
+
+.sprice_14a {
+	vertical-align: top;
+	font-size: 14px;
+	margin-right: 5px;
+	color:#d63232;
+	font-family: Arial;
+	margin-top: 10px;
+	display: inline-block;
+}
+.sprice_13a {
+	vertical-align: top;
+	font-size: 13px;
+	margin-right:0px;
+	color:#d63232;
+	font-family: Arial;
+	margin-top: 5px;
+	display: inline-block;
+}
+.price_name_12a {
+	vertical-align: top;
+	font-size: 12px;
+	margin-right:2px;
+	color:#595757;
+	font-family: Arial;
+	margin-top: 5px;
+	display: inline-block;
+}
+
+.price_30a {
+	font-family: "微軟正黑體",Arial;
+	font-size: 30px;
+	line-height: 1.7;
+	color:#e60012;
+}
+.price_18a {
+	font-size: 18px;
+	line-height: 1.7;
+	color:#e60012;
+}
+
+.price_60a {
+	font-size: 60px;
+	line-height: 1;
+	color:#e60012;
+}
+
+.price1 {
+	font-family:Arial;
+	font-size:12px;
+	color:#999999;
+	text-decoration:line-through;
+	font-style:italic;
+}
+.price2 {
+	font-family: "微軟正黑體",Arial;
+	font-size: 12px;
+/*	line-height: 1.7;
+*/	color:#e60012;
+}
+.price3 {
+	font-family: "微軟正黑體",Arial;
+	font-size:30px;
+	color:#e60012;
+}
+.price_name {
+	font-family: "微軟正黑體",Arial;
+/*	vertical-align: top;
+*/	font-size: 12px;
+	margin-right:2px;
+	color:#666666;
+/*	margin-top: 5px;
+*/	display: inline-block;
+}
+.price_name2 {
+	font-family: "微軟正黑體",Arial;
+	font-size:12px;
+	color:#666666;
+}
+.price_name3 {
+	font-family: "微軟正黑體",Arial;
+	font-size:12px;
+	color:#d63232;
+}
+
+.siteinfo_12a_bold {
+	font-family:"微軟正黑體",Arial;
+	font-size:12px;
+}
+.siteinfo_15a_bold {
+	font-family:"微軟正黑體",Arial;
+	font-size:12px;
+	color:#333;
+}
+
+.name_12a {
+	font-family:"微軟正黑體",Arial;
+	font-size:12px;
+}
+.name_12a_bold {
+	font-family:"微軟正黑體",Arial;
+	font-size:12px;
+}
+.name_15a_bold {
+	font-family:"微軟正黑體",Arial;
+	font-size:15px;
+}
+.name_17a_bold {
+	font-family:"微軟正黑體",Arial;
+	font-size:17px;
+	line-height:20px;
+}
+.name_18a_bold {
+	font-family:"微軟正黑體",Arial;
+	font-size:18px;
+	line-height:20px;
+}

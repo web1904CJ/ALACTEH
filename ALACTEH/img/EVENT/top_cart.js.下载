@@ -1,0 +1,54 @@
+//購物車右上角明細
+var topCART = function(option){
+	var sets = {
+		divID		: 'index_carbox',
+		numID		: 'top_cart_num',
+		offID		: 'index_car_title',
+		detailURL	: '/include/ajax/ajax_top_cart1.php',
+		listURL		: '/include/ajax/ajax_top_cart2.php',
+		numURL		: '/include/ajax/ajax_top_cart_num.php'
+	};
+	
+	$.extend(sets, option);
+	
+	var _this = this;
+	
+	function over(){
+		$("#" + sets.divID).slideUp();	
+	};
+	
+	$("#" + sets.divID).css({
+		'position'		: 'absolute',
+		'left'			: $("#" + sets.offID).offset().left - 363,
+		'top'			: parseInt($("#" + sets.offID).offset().top) + 28,
+		'z-index'		: 9999
+	});
+	
+	this.detail = function(ID, Amount){
+		$(document).unbind('mouseover');
+		$.post(sets.detailURL, {Prod_Sell_ID: ID}, function(h){
+			$("#" + sets.divID).html(h).slideDown();
+			$("#" + sets.numID).load(sets.numURL);
+			setTimeout(function(){
+				$("#" + sets.divID).slideUp(function(){
+					$(document).bind('mouseover', over);									 
+				});					
+			}, 3000);
+		}, 'html');		
+	};
+
+	this.hover = function(){
+		$("#" + sets.offID).mouseover(function(e){
+			if(!$("#" + sets.divID + ":animated").attr('id')){
+				$.post(sets.listURL, {}, function(h){
+					$("#" + sets.divID).mouseover(function(e){
+						e.stopPropagation();									   
+					}).html(h).slideDown();
+				});
+			};
+			e.stopPropagation();			
+		});
+		
+		$(document).bind('mouseover', over);
+	};
+};

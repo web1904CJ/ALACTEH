@@ -1,0 +1,125 @@
+#left_menubox {
+	float:left;
+	width: 194px;
+	margin:0px 0px 20px 0px;
+	padding:2px 2px 2px 2px;
+	border:1px solid #cecece;
+	border-radius: 3px;
+}
+.left_seriesmenubox {
+	float:left;
+	width: 192px;
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	border:1px solid #a5a5a5;
+}
+.left_menutitlebox {
+	float:left;
+	width: 182px;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 12px;
+	font-family:"微軟正黑體",Arial;
+	font-size:16px;
+	font-weight:bold;
+	line-height:36px;
+	color:#fff;
+	background-color:#666666;
+	border-top:4px solid #e60012;
+	border-top-color:#e60012;
+	border-bottom-color:transparent;
+	border-right-color:transparent;
+	-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.8);
+	box-shadow:inset 0 1px 2px rgba(0,0,0,0.8);
+	text-shadow: 0px 1px 1px #000;
+}
+.left_menutitle_default {
+	float:left;
+	width:182px;
+	margin:0px 0px 0px 0px;
+	padding:5px 0px 5px 12px;
+	font-family: "微軟正黑體",Arial;
+	font-size:13px;
+	font-weight:bold;
+	line-height:20px;
+	color:#000;
+	border-top:1px dotted #cccccc;
+}
+.left_menutitle_default a {
+	color:#000;
+	text-decoration:none;
+}
+.left_menutitle_default a:hover {
+	color:#e60012;
+	text-decoration:none;
+}
+.left_menutitle_focus {
+	float:left;
+	width:182px;
+	margin:0px 0px 0px 0px;
+	padding:5px 0px 5px 12px;
+	font-family: "微軟正黑體",Arial;
+	font-size:13px;
+	font-weight:bold;
+	line-height:20px;
+	color:#000;
+	background-color:#ececec;
+	border-top:1px dotted #cccccc;
+}
+.left_menutitle_focus a {
+	color:#000;
+	text-decoration:none;
+}
+.left_menutitle_focus a:hover {
+	color:#e60012;
+	text-decoration:none;
+}
+.left_menuitembox {
+	float:left;
+	width:186px;
+	padding:0px 0px 0px 0px;
+}
+.left_menuitembox ul {
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	list-style:none;
+}
+.left_menuitembox li {
+	float:left;
+	width:150px;
+	margin:0px 0px 0px 0px;
+	padding:5px 0px 10px 36px;
+	font-family: "微軟正黑體",Arial;
+	font-size:12px;
+	color:#000;
+}
+.menu_item_default {
+	float:left;
+	width:150px;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	color:#000;
+}
+.menu_item_default a {
+	color:#000;
+	text-decoration:none;
+}
+.menu_item_default a:hover {
+	color:#e60012;
+	text-decoration:none;
+}
+.menu_item_focus {
+	float:left;
+	width:150px;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	font-weight:bold;
+	color:#000;
+}
+.menu_item_focus a {
+	color:#e60012;
+	text-decoration:none;
+}
+.menu_item_focus a:hover {
+	color:#e60012;
+	text-decoration:none;
+}
