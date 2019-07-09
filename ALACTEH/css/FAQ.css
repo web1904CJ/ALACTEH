@@ -1,0 +1,32 @@
+/* 问题文字样式 */
+.question{
+    width: 772px;
+    margin: 0px;
+    padding: 12px 0px 12px 0px;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    border-bottom: 1px dotted #cecece;
+}
+.FAQ a{
+    font-family: "微軟正黑體",Arial;
+    font-size: 15px;
+    color: #666;
+}
+.FAQ a:hover{
+    text-decoration: none;
+    color: #e60012;
+}
+
+
+/* 答案样式 */
+.answer{
+    width: 740px;
+    margin: 0px 0px 15px 0px;
+    padding: 0px 15px 0px 15px;
+    border: 1px solid #cecece;
+    border-radius: 5px;
+}
+
+.FAQ table{border:1px solid #777;}

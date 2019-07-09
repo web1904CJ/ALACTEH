@@ -1,11 +1,21 @@
-.nav-item{
+.index_menu a{
     border-left:1px solid #666;
+    border-right:1px solid #666;
+    font:24px;
+    width: 100px;
+    padding: 0px 40px;
+    color: #231815;
+    font-size: 24px;
+    font-family: "微軟正黑體",Arial;
 }
-.nav-item a{
-    font:24px ���壻
+.index_menu{
+    float: left;
+    border-right:1px solid #666;
+}
+.index_logo{
+    margin: 30px 0;
+}
 
-}
-.shop:hover{
-    width:100px;height:25px;
-    border: 1px solid #000000;
+.index_top_iconword input{
+    border:0px;
 }
