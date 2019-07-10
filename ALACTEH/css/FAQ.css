@@ -28,5 +28,13 @@
     border: 1px solid #cecece;
     border-radius: 5px;
 }
+.answer_text{
+    width: 734px;
+    margin: 0px;
+    padding: 10px 3px 8px 3px;
+    color: #666;
+    font-family: Arial;
+    font-size: 13px;
+}
 
 .FAQ table{border:1px solid #777;}
