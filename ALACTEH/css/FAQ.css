@@ -1,3 +1,6 @@
+#parent{
+   
+}
 /* 问题文字样式 */
 .question{
     width: 772px;
@@ -22,19 +25,42 @@
 
 /* 答案样式 */
 .answer{
-    width: 740px;
+    width: 772px;
     margin: 0px 0px 15px 0px;
-    padding: 0px 15px 0px 15px;
+    padding: 15px;
     border: 1px solid #cecece;
     border-radius: 5px;
 }
 .answer_text{
-    width: 734px;
-    margin: 0px;
-    padding: 10px 3px 8px 3px;
+    width: 772px;
+    margin: 0px;  
     color: #666;
     font-family: Arial;
     font-size: 13px;
 }
 
-.FAQ table{border:1px solid #777;}
+/* q7图片样式 */
+#q7 img{
+    width: 750px;
+}
+/* q8中表格样式 */
+#q8 th,#q8 td{
+    width:279px;
+    height:40px;
+    border:1px solid #777;
+    color: #666;
+    font-family: Arial;
+    font-size: 13px;
+}
+#q8 table th{
+    background:#FFC000;
+    text-align: center;
+}
+/*q10样式 链接*/
+#q10 a{
+    color: #551A88;
+}
+}
+#q10 a:hover{
+    cursor: pointer;
+ 
