@@ -1,4 +1,4 @@
-/*ÏÂß…¿ò˜ÓÊ½*/
+/*ï¿½ï¿½ß…ï¿½ï¿½ï¿½Ê½*/
 .bd{
     border-bottom: 1px solid #cecece;
 }
@@ -12,7 +12,7 @@ tr{
     height: 51px;
 }
 .td_front{width:118px;
-    font:14px  "Î¢ÈíÑÅºÚ";
+    font:14px  "Î¢ï¿½ï¿½ï¿½Åºï¿½";
 }
 .input_case{
     width:206px;
@@ -26,4 +26,9 @@ tr{
 .ema:visited{
     display: inline;
     visibility: visible;
+}
+/* æç¤º */
+.forms_show {
+
+    display:none;
 }

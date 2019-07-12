@@ -13,6 +13,7 @@
     <title></title>
 </head>
 <body>
+<form >
 <div class="web_width">
     <div class="member_title bd">加入會員</div>
     <p class="font_small">按下加入會員的按鈕即表示，您確認已閱讀並同意ALATECH隱私權聲明與條款及條件。</p>
@@ -23,16 +24,23 @@
             <tr class="bd">
                 <td class="td_front">Email賬號</td>
                 <td>
-                    <input name="email " class="email border input_case" type="text" />
+                    <input name="email" class="email border input_case" type="text" />
                 </td>
+                <td><span class="forms_show">請輸入密碼</span></td>
             </tr>
             <tr class="bd">
                 <td class="td_front">密    碼</td>
-                <td><input name="upwd" class="border input_case" type="text"/></td>
+                <td>
+                    <input name="pwd" class="border input_case" type="text"/>
+                </td>
+                <td><span class="forms_show">請輸入密碼</span></td>
             </tr>
             <tr>
                 <td class="td_front">確認密碼</td>
-                <td><input name="u_pwd" class="border input_case" type="text"/></td>
+                <td>
+                    <input name="c_pwd" class="border input_case" type="text"/>
+                </td>
+                <td><span class="forms_show">請輸入密碼</span></td>
             </tr>
         </table>
     </div>
@@ -42,7 +50,9 @@
         <table>
             <tr class="bd">
                 <td class="td_front">姓名</td>
-                <td><input name="uname" class="border input_case" type="text"/></td>
+                <td><input name="uname" class="border input_case" type="text"/>（請填寫真實姓名）
+                </td>
+                <td><span class="forms_show">請輸入密碼</span></td>
             </tr>
             <tr class="bd">
                 <td>性別</td>
@@ -53,7 +63,9 @@
             </tr>
             <tr class="bd">
                 <td class="td_front">電話</td>
-                <td><input name="phone" class="border input_case" type="text"/></td>
+                <td><input name="phone" class="border input_case" type="text"/>
+                </td>
+                <td><span class="forms_show">請輸入密碼</span></td>
             </tr>
             <tr  class="bd">
                 <td align="center" colspan="2" class="td_front">
@@ -67,5 +79,66 @@
         </div>
     </div>
 </div>
+</form>
+<script>
+    (function(){
+   /*当文本框获得焦点时，清除文本框旁边的div的class*/
+    //1. 查找触发事件的元素
+    var txtEmail=document.getElementsByName("email")[0];
+    var txtPwd=document.getElementsByName("pwd")[0];
+    var c_txtPwd=document.getElementsByName("c_pwd")[0];
+    var txtUname=document.getElementsByName("uname")[0];
+    var txtPhone=document.getElementsByName("phone")[0];
+    //2. 绑定事件处理函数
+    txtEmail.onfocus=
+    txtPwd.onfocus=
+    c_txtPwd.onfocus=
+    txtUname.onfocus=
+    txtPhone.onfocus=
+    function(){
+	//3. 查找要修改的元素
+	//找当前txt的爹的下一个兄弟的唯一一个孩子div
+	var span=this.parentNode //td
+							.nextElementSibling //下一个td
+							.children[0] //div
+	//4. 修改元素
+	span.className="";
+    } 
+
+
+/*文本框失去焦点，验证当前文本框的内容，修改提示信息的样式*/
+//为姓名文本框绑定失去焦点事件
+txtName.onblur=function(){
+	//定义正则表达式
+	var reg=/^\w{1,10}$/;
+	//this->txtName
+	//调用公共的验证方法vali
+	vali.call( this ,reg);
+}           //  |   ↓
+function vali(/*|*/reg){
+	//            ↓
+	//this -> window->call->txtName
+	//查找当前文本框旁边的div
+	var div=this.parentNode //td
+							.nextElementSibling //下一个td
+							.children[0] //div
+	//如果正则验证文本框的内容通过
+	if(reg.test(this.value)==true){
+		//就修改div的className为vali_success
+		div.className="vali_success";
+	}else{//否则
+		//就修改div的className为vali_fail
+		div.className="vali_fail";
+	}
+}
+txtPwd.onblur=function(){
+	//定义正则表达式
+	var reg=/^\d{6}$/;
+	//this->txtPwd
+	//调用公共的验证方法vali
+	vali.call( this ,reg);
+}
+})()
+</script>
 </body>
 </html>
