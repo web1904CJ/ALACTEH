@@ -9,24 +9,31 @@
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/comm.css"/>
+    <link rel="stylesheet" href="css/product_box.css">
     <link rel="stylesheet" href="css/OB001-product.css"/>
     <title></title>
 </head>
 <body>
-<header>
-    <iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
-</header>
 <div class="OB001_index web_width">
     <!-- 索引-->
-    <div class="product_menu_out float-left mr-3">
-        <div class="product_menu_in ">
+    <div class="product_menu_out float-left ">
+        <div class="product_menu_in">
             <div class="text-light">❚ 新品上市</div>
             <ul class="list-unstyled">
-                <li><h6>❚HRM心率系列</h6></li>
-                <li class="ml-1 mb-2"><a href="">光学臂带</a></li>
-                <li><h6>❚商用跑步机</h6></li>
-                <li class="ml-1 mb-2"><a href=""> AT6000 LED</a></li>
-                <li class="ml-1 mb-2"><a href=""> AT6000 TFT</a></li>
+                <li><h6>❚ HRM心率系列</h6></li>
+                <li class="ml-1 mb-2"><a href="">光學心率臂帶</a></li>
+                <li class="ml-1 mb-2"><a href="">GPS光學心率手錶</a></li>
+                <li class="ml-1 mb-2"><a href="">心率胸帶</a></li>
+                <li class="ml-1 mb-2"><a href="">運動心率手錶</a></li>
+                <li><h6>❚ ATTACUS商用健身器材</h6></li>
+                <li class="ml-1 mb-2"><a href=""> AT6000-LED商用跑步機</a></li>
+                <li class="ml-1 mb-2"><a href=""> AT6000-TFT商用跑步機</a></li>
+                <li><h6>❚ ATTACUS家用健身器材</h6></li>
+                <li class="ml-1 mb-2"><a href=""> A200家用跑步機</a></li>
+                <li class="ml-1 mb-2"><a href=""> AT400家用跑步機</a></li>
+                <li class="ml-1 mb-2"><a href=""> AT400家用跑步機</a></li>
+                <li class="ml-1 mb-2"><a href=""> AT500家用跑步機</a></li>
+                <li class="ml-1 mb-2"><a href=""> AT800家用跑步機</a></li>
             </ul>
         </div>
     </div>
@@ -34,11 +41,11 @@
     <div style="width:772px;" class="float-left">
         <div>
             <!-- 面包屑导航-->
-            <ul class="breadcrumb bg-white font_small text-muted">
-                <li class="breadcrumb-item"><a href="">首頁</a></li>
-                <li class="breadcrumb-item"><a href="">產品資訊</a></li>
-                <li class="breadcrumb-item"><a href="">新品上市</a></li>
-                <li class="breadcrumb-item"><a href="">OB001光學心率臂帶</a></li>
+            <ul class="breadcrumb bg-white">
+                <li class="breadcrumb-item"><a class="font" href="">首頁</a></li>
+                <li class="breadcrumb-item"><a class="font" href="">產品資訊</a></li>
+                <li class="breadcrumb-item"><a class="font" href="">新品上市</a></li>
+                <li class="breadcrumb-item"><a class="font" href="">OB001光學心率臂帶</a></li>
             </ul>
             <!-- 商品詳情-->
             <div>
@@ -54,8 +61,8 @@
                 </div>
                 <div class="details float-left">
                     <h2 class="name_18a_bold">OB001 光學心率臂帶</h2>
-                    <h600000000000>商品編號：OB001</h6>
-                    <div class="">
+                    <span class="detail_upbox">商品編號：OB001</span>
+                    <div class="detail_quantitybox">
                         <span>数量</span>
                         <button data-toggle="dropdown" class=" border font_small dropdown-toggle bg-white">請選擇</button>
                         <ul class="dropdown-menu font_small">
@@ -67,12 +74,14 @@
                             <li><a href="">5</a></li>
                         </ul>
                     </div>
-                    <div class="shop">
-                        <span>建議售價NT$3300</span><br/>
-                        <span>優惠價NT$</span>
+                    <div >
+                    <div class="price_name">
+                        <span >建議售價</span>
+                        <span class="price_name2">NT$3300</span><br/>
+                        <span class="">優惠價NT$</span>
                         <span >2590</span>
                         <!-- 加入購物車-->
-                        <button class="bg-dark text-white m-0  "><img src="img/OB001/carto.png" alt=""/>加入購物車</button>
+                        <button class="font_btn">加入購物車</button>
                     </div>
                     <div class="font_small">
                         <b>• 儲存功能</b><br/>
@@ -156,8 +165,5 @@
         </div>
     </div>
 </div>
-<footer>
-    <iframe class="my_footer" src="footer.html" frameborder="0"></iframe>
-</footer>
 </body>
 </html>

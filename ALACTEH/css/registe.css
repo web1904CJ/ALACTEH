@@ -28,7 +28,15 @@ tr{
     visibility: visible;
 }
 /* 提示 */
-.forms_show {
-
-    display:none;
+.forms_show{
+    display: none;
+}
+.forms_success{
+    display: none;
+}
+.forms_fail{
+    font-size: 11px;
+    color: #FFF;
+    background: #000;
+    padding: 2px;
 }

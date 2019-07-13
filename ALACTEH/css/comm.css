@@ -3,6 +3,19 @@
 * {
   margin: 0;
   padding: 0; }
+
+  .font{
+    font-size:12px;
+    color:#666;
+}
+.font_btn{
+  font-size: 12px;
+  color:#fff;
+  border-radius: 4px;
+  padding:3px 10px;
+  background-image: linear-gradient(to top, #444444 0, #000000 100%);
+}
+
 .font_small {
   font-size: 0.8rem; }
 .my_header,.my_footer{
@@ -19,4 +32,5 @@
   width:1000px;
   margin:0 auto;
   box-sizing: content-box;
+  
 }

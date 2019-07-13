@@ -10,19 +10,20 @@ router.post('/reg',function(req,res){
 	//获取post请求的数据
 	var obj=req.body;
 	//验证每一项的数据是否为空
+	if(!obj.email){
+		res.send({code:401,msg:'email required'});
+		return;
+	  }
+	if(!obj.upwd){
+		res.send({code:402,msg:'upwd required'});
+		return;
+	  }
 	if(!obj.uname){
-	  res.send({code:401,msg:'uname require'});
+	  res.send({code:403,msg:'uname require'});
 	  //return 阻止往后执行
 	  return;
-	}
-	if(!obj.upwd){
-	  res.send({code:402,msg:'upwd required'});
-	  return;
-	}
-	if(!obj.email){
-	  res.send({code:403,msg:'email required'});
-	  return;
-	}
+	}	
+	
 	if(!obj.phone){
 	  res.send({code:404,msg:'phone required'});
 	  return;

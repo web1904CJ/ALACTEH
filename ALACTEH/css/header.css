@@ -1,3 +1,18 @@
+.index_top_iconword {
+    background: #231816;
+    font-size: 12px;
+    font-family: Arial;
+    line-height: 20px;
+    text-align: right;
+    padding: 3px 0;
+}
+
+.index_top_iconword input{
+    font:11px;
+    color: #666666;
+    padding:0 0 0 5px;
+    
+}
 .index_menu a{
     border-left:1px solid #666;
     border-right:1px solid #666;
@@ -16,6 +31,3 @@
     margin: 30px 0;
 }
 
-.index_top_iconword input{
-    border:0px;
-}
